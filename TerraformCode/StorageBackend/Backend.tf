@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "StorageBackendRg" {
 }
 
 resource "azurerm_storage_account" "StorageAccount" {
-  name                     = "TerraformState"
+  name                     = "terraformstatefordemo05"
   resource_group_name      = azurerm_resource_group.StorageBackendRg.name
   location                 = azurerm_resource_group.StorageBackendRg.location
   account_tier             = "Standard"
