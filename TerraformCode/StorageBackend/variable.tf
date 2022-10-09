@@ -1,4 +1,4 @@
 variable "container" {
-  type    = list
+  type    = list(string)
   default = ["tfstate", "modules"]
 }

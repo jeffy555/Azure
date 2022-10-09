@@ -12,7 +12,7 @@ resource "azurerm_storage_account" "StorageAccount" {
 }
 
 resource "azurerm_storage_container" "Container" {
-  count                  = length(vars.container)
+  count                  = length(var.container)
   storage_account_name  = azurerm_storage_account.StorageAccount.name
   container_access_type = "private"
 }
