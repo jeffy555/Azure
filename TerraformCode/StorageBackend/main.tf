@@ -15,5 +15,5 @@ resource "azurerm_storage_container" "Container" {
   count      = length(var.container)
   name                  = var.container[count.index]
   storage_account_name  = azurerm_storage_account.StorageAccount.name
-  container_access_type = "private"
+  container_access_type = "container"
 }

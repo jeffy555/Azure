@@ -1,9 +1,9 @@
 variable "name" {
   type        = string 
-  value = "Demo"
+  default = "Demo"
 }
 
 variable "location" {
   type        = string
-  value = "East US"
+  default = "East US"
 }
