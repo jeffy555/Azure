@@ -4,9 +4,13 @@ provider "azurerm" {
 
 module "demo" {
   name     = "Demo-Azure"
-  source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/234/RG.zip"
+  source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/236/RG.zip"
   location = "East US"
-  Environment = "demo"
+    tags = {
+    "Env"       = "dev",
+    "Namespace" = "Demo",
+    "Owner"     = "Jefferson"
+  }
 }
 
 
