@@ -6,7 +6,7 @@ provider "azurerm" {
 module "SingleStack" {
   name = "Demo-Azure"
   name_vnet     = "Demo-Vnet"
-  #source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/236/RG.zip"
+  #source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/237/modules.zip"
   source = "../../Modules/SingleStack"
   address_space = ["10.0.0.0/16"]
   location = "East US"
@@ -33,5 +33,12 @@ module "SingleStack" {
   request_timeout = var.request_timeout
   tier = var.tier[0]
   port = var.port[0]
+  sqlservername = "demoazuresqlserver05jeff"
+  sqlusername = "mradministrator"
+  genpassword = "Admin12345"
+  storage_replication = "LRS"
+  storage_tier = "Standard"
+  storagename_DB = "stroagefordbinjection"
+  sqldb = "Demo-db"
   }
   
