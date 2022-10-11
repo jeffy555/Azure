@@ -150,7 +150,7 @@ resource "azurerm_application_gateway" "Appgateway" {
 }
 
 resource "azurerm_sql_server" "sqlserver" {
-  name                         = var.sqlservername
+  name                         = var.name_sql_server
   resource_group_name = var.name
   location            = var.location
   version                      = "12.0"
@@ -160,7 +160,7 @@ resource "azurerm_sql_server" "sqlserver" {
 
 resource "azurerm_storage_account" "sc" {
   name                     = var.storagename_DB
-resource_group_name = var.name
+  resource_group_name = var.name
   location            = var.location
   account_tier             = var.storage_tier
   account_replication_type = var.storage_replication
@@ -170,12 +170,5 @@ resource "azurerm_sql_database" "example" {
   name                = var.sqldb
   resource_group_name = var.name
   location            = var.location
-  server_name         = azurerm_sql_server.sqlserver.name
+  server_name         = var.sqlservername
 }
-
-# storage_account {
-#   name = var.name_private_storage
-#   type = var.Storage_type_private
-#   account_name = var.private_storage_name
-#   access_key = ""
-# }
