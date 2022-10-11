@@ -1,0 +1,12 @@
+NAME	TYPE	LOCATION
+basicNsgDemo-Azure-vnet-nic01	Network security group	East US
+Demo-Azure-vnet	Virtual network	East US
+Demo-db (demoazuresqlserver05jeff/Demo-db)	SQL database	East US
+Demo-service-plan	App Service plan	East US
+Demo-Vnet	Virtual network	East US
+demoazuresqlserver05jeff	SQL server	East US
+Demowebappazure05	App Service	East US
+frontendappGW	Application gateway	East US
+Internal	Load balancer	East US
+public-ip	Public IP address	East US
+stroagefordbinjection	Storage account	East US
