@@ -6,8 +6,8 @@ provider "azurerm" {
 module "SingleStack" {
   name = "Demo-Azure"
   name_vnet     = "Demo-Vnet"
-  #source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/237/modules.zip"
-  source = "../../Modules/SingleStack"
+  source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/238/modules.zip"
+  #source = "../../Modules/SingleStack"
   address_space = ["10.0.0.0/16"]
   location = "East US"
   #Subnet
