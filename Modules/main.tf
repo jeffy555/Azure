@@ -150,7 +150,7 @@ resource "azurerm_application_gateway" "Appgateway" {
 }
 
 resource "azurerm_sql_server" "sqlserver" {
-  name                         = var.name_sql_server
+  name                         = var.sqlservername
   resource_group_name = var.name
   location            = var.location
   version                      = "12.0"
