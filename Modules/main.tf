@@ -124,4 +124,33 @@ resource "azurerm_application_gateway" "Appgateway" {
   ]
 }
 
+resource "azurerm_app_service_plan" "service_plan" {
+  name                = var.service_plan
+  location            = var.location
+  resource_group_name = var.name
 
+  sku {
+    tier = var.tier_app_service
+    size = var.size_service_plan
+  }
+  depends_on = [
+   azurerm_resource_group 
+  ]
+}
+
+resource "azurerm_app_service" "example" {
+  name = var.app_service_name
+  location            = var.location
+  resource_group_name = var.name
+  app_service_plan_id = azurerm_app_service_plan.service_plan.id
+  depends_on = [
+    azurerm_resource_group.Rg, azurerm_application_gateway, azurerm_app_service_plan
+  ]
+}
+
+# storage_account {
+#   name = var.name_private_storage
+#   type = var.Storage_type_private
+#   account_name = var.private_storage_name
+#   access_key = ""
+# }

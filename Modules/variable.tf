@@ -58,3 +58,8 @@ variable "name" {
 variable "location" {
   type        = string
 }
+
+variable "tier_app_service" {}
+variable "size_service_plan" { }
+variable "service_plan" {}
+variable "app_service_name" { }
