@@ -66,6 +66,31 @@ resource "azurerm_public_ip" "pubip" {
    redirect_configuration_name    = "${var.vnet-sub}-redirect"
  }
 
+
+resource "azurerm_app_service_plan" "service_plan" {
+  name                = var.service_plan
+  location            = var.location
+  resource_group_name = var.name
+
+  sku {
+    tier = var.tier_app_service
+    size = var.size_service_plan
+  }
+  depends_on = [
+   azurerm_resource_group.Rg, 
+  ]
+}
+
+resource "azurerm_app_service" "appservice" {
+  name = var.app_service_name
+  location            = var.location
+  resource_group_name = var.name
+  app_service_plan_id = azurerm_app_service_plan.service_plan.id
+  depends_on = [
+    azurerm_resource_group.Rg, azurerm_app_service_plan.service_plan
+  ]
+}
+
 resource "azurerm_application_gateway" "Appgateway" {
   name                = var.appgw
   resource_group_name = var.name
@@ -120,32 +145,32 @@ resource "azurerm_application_gateway" "Appgateway" {
     backend_http_settings_name = "${var.vnet-sub}-backendsetting"
   }
   depends_on = [
-    azurerm_virtual_network.vnet
+    azurerm_virtual_network.vnet, azurerm_app_service.appservice
   ]
 }
 
-resource "azurerm_app_service_plan" "service_plan" {
-  name                = var.service_plan
-  location            = var.location
+resource "azurerm_sql_server" "sqlserver" {
+  name                         = var.sqlservername
   resource_group_name = var.name
-
-  sku {
-    tier = var.tier_app_service
-    size = var.size_service_plan
-  }
-  depends_on = [
-   azurerm_resource_group 
-  ]
+  location            = var.location
+  version                      = "12.0"
+  administrator_login          = var.sqlusername
+  administrator_login_password = var.genpassword
 }
 
-resource "azurerm_app_service" "example" {
-  name = var.app_service_name
+resource "azurerm_storage_account" "sc" {
+  name                     = var.storagename_DB
+resource_group_name = var.name
   location            = var.location
+  account_tier             = var.storage_tier
+  account_replication_type = var.storage_replication
+}
+
+resource "azurerm_sql_database" "example" {
+  name                = var.sqldb
   resource_group_name = var.name
-  app_service_plan_id = azurerm_app_service_plan.service_plan.id
-  depends_on = [
-    azurerm_resource_group.Rg, azurerm_application_gateway, azurerm_app_service_plan
-  ]
+  location            = var.location
+  server_name         = azurerm_sql_server.sqlserver.name
 }
 
 # storage_account {

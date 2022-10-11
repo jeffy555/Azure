@@ -27,6 +27,28 @@ variable "allocation" {
     type = string
 }
 
+variable "sqlservername" {
+}
+
+variable "sqlusername" {
+  
+}
+variable "storage_replication" {
+  
+}
+variable "storagename_DB" {
+  
+}
+variable "storage_tier" {
+  
+}
+variable "sqldb" {
+  
+}
+
+
+
+variable "genpassword" { }
 variable "appgw" {
 }
 
