@@ -30,27 +30,15 @@ variable "allocation" {
 variable "sqlservername" {
 }
 
-variable "sqlusername" {
-  
+variable "name_sql_server" {
+  type = string
 }
-variable "storage_replication" {
-  
-}
-variable "storagename_DB" {
-  
-}
-variable "storage_tier" {
-  
-}
-variable "sqldb" {
-  
-}
-
-
-
+variable "storage_replication" {}
+variable "storagename_DB" {}
+variable "storage_tier" {}
+variable "sqldb" {}
 variable "genpassword" { }
-variable "appgw" {
-}
+variable "appgw" {}
 
 variable "skuname" {}
 variable "tier" {
