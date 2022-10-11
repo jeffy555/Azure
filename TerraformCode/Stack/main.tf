@@ -33,12 +33,12 @@ module "SingleStack" {
   request_timeout = var.request_timeout
   tier = var.tier[0]
   port = var.port[0]
-  sqlservername = "demoazuresqlserver05jeff"
-  sqlusername = "mradministrator"
-  genpassword = "Admin12345"
-  storage_replication = "LRS"
-  storage_tier = "Standard"
-  storagename_DB = "stroagefordbinjection"
-  sqldb = "Demo-db"
+  sqlservername = var.sqlservername
+  sqlusername = var.sqlusername
+  genpassword = var.genpassword
+  storage_replication = var.storage_replication
+  storage_tier = var.storage_tier
+  storagename_DB = var.storagename_DB
+  sqldb = var.sqldb
   }
   
