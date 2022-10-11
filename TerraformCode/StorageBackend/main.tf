@@ -45,4 +45,7 @@ resource "azurerm_key_vault" "example" {
       "Get",
     ]
   }
+  depends_on = [
+    azurerm_resource_group.StorageBackendRg
+  ]
 }
