@@ -16,3 +16,16 @@ variable "port" {
 }
 
 variable "request_timeout" {}
+
+
+variable "tier_app_service" {}
+variable "size_service_plan" { }
+variable "service_plan" {}
+variable "app_service_name" { }
+variable "storage_replication" {}
+variable "storagename_DB" {}
+variable "storage_tier" {}
+variable "sqldb" {}
+variable "genpassword" { }
+variable "sqlservername" {}
+variable "sqlusername" {}
