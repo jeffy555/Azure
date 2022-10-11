@@ -6,7 +6,7 @@ provider "azurerm" {
 module "SingleStack" {
   name = "Demo-Azure"
   name_vnet     = "Demo-Vnet"
-  source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/238/modules.zip"
+  source   = "https://terraformstatefordemo05.blob.core.windows.net/modules/242/modules.zip"
   #source = "../../Modules/SingleStack"
   address_space = ["10.0.0.0/16"]
   location = "East US"
@@ -40,5 +40,8 @@ module "SingleStack" {
   storage_tier = var.storage_tier
   storagename_DB = var.storagename_DB
   sqldb = var.sqldb
+  service_plan = var.service_plan
+  app_service_name = var.app_service_name
+  size_service_plan =var.size_service_plan
+  tier_app_service = var.tier_app_service
   }
-  
