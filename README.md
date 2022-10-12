@@ -1,3 +1,39 @@
+Challenge 1:
+
+Step 1:
+
+Created Terraform Stroage Backend (For State and modules)
+
+Step 2:
+
+Created Terraform modules single stack and push it to storage container (modules)
+
+Step 3:
+
+Download Modules and then proceed with Terraform approach
+
+Step 4: Terraform Build
+
+Terraform Init
+Terraform fmt
+Terraform validate
+Publish Artifact to CD process
+
+Step 5: Terraform Deployment
+
+Terraform init
+Terraform plan
+Terraform apply
+
+There were some issues with the CI / CD Setup due to the modules approach so intergrated in the local machine itself.
+
+Resources created:
+
+AzureRG / AzureVNET / AzureNSG / Azure Application Gateway / Azure App service / Internal Load balancer / Azure SQL Database / Azure Storage Account / Azure Logic App
+
+
+
+
 Challenge 2:
 
 Metdatainstance can be executed only inside the Virtual Machine
