@@ -34,6 +34,16 @@ AzureRG / AzureVNET / AzureNSG / Azure Application Gateway / Azure App service /
 
 
 
+Future Advancements:
+
+Integrate A new SP connection and use it for the creation of the resources or project wise
+Enable Replace Tokens plugin to fetch the credentials and secrets and store it in the terraform tf files
+Seperate Modules for each resource and construct a staged pipeline.
+Migrate the code to (Pipeline as a code YAML)
+Set onCOnditions=True to enable or skip the stage task running in the pipeline
+
+
+
 Challenge 2:
 
 Metdatainstance can be executed only inside the Virtual Machine
